@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const fs = require("fs");
 let notes = require("./db/db.json");
+let uniqid = require('uniqid');
 
 router.get("/api/notes", function (req, res) {
     //Only read
@@ -16,7 +17,7 @@ router.post("/api/notes", function (req, res) {
     console.log("Note: ", req.body);
 
     //Auto increment the id
-    let notes = {...req.body, id:i}
+    let notes = {...req.body, id:uniqid()};
 
     fs.readFile("./db/db.json", "utf8", function (error, data) {
         data = JSON.parse(data);

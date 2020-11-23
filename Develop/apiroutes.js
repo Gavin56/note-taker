@@ -28,16 +28,13 @@ router.post("/api/notes", function (req, res) {
             res.json(data);
         });
     });
-    // notes.push(req.body);
-    // return res.json(note);
 });
 
 router.delete("/api/notes/:id", (req, res) => {
     fs.readFile("./db/db.json", "utf8", (error, data) => {
         const deleteData = JSON.parse(data);
-        let newJSON = deleteData.filter(note => req.params.id !== note.id);
-        newJSON = JSON.stringify(newJSON);
-        
+        let newJSON = JSON.stringify(deleteData.filter(note => req.params.id !== note.id));
+
         fs.writeFile("./db/db.json", newJSON, (error, data) => {
             console.log(error);
             res.json({ ok: true });

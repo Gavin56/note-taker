@@ -18,6 +18,7 @@ router.post("/api/notes", function (req, res) {
 
     //Auto increment the id
     let notes = {...req.body, id:uniqid()};
+    console.log(notes);
 
     fs.readFile("./db/db.json", "utf8", function (error, data) {
         data = JSON.parse(data);

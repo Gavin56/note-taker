@@ -15,3 +15,6 @@ Open the "server.js" file in the integrated terminal, then enter "node server.js
 
 ### Empty Note Page:
 <img src="https://github.com/Gavin56/images/blob/main/note-taker-empty.png?raw=true" alt="Note Taker Empty Note" width=500px>
+
+## Deployed Application
+ https://powerful-inlet-25334.herokuapp.com/
